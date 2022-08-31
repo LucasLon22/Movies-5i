@@ -1,12 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies 5i</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9117be7fd4.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./Imagenes/Logo solo 2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Esto es segundo proyecto</h1>
+    <!--Aqui comienza el nav -->
+    <header>
+        <nav class="navbar navbar-expand-lg p-0 fixed-top" id="navbar">
+
+            <span class="imagen-logo">
+                <img src="./imagenes/logoTres.png" width="125" height="75" alt="logo.png" class="rounded-pill p-1">
+            </span>
+            <div class="container-fluid ms-4 m-1">
+                <a class="navbar-brand text-light home-nav" href="index.html">Home</a>
+                <a href="index.html"><i class="fa-solid fa-house-chimney home-icono-nav  ms-4 fs-3"></i></a>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light ms-4" aria-current="page" href="#">Acerca de
+                                Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light ms-4" aria-current="page" href="#">Contacto</a>
+                        </li>
+                        <li>
+                            <form class="d-flex ms-4" role="search">
+                                <input class="form-control me-4 icono-placholder" type="search"
+                                    placeholder="&#xf002; Buscar" aria-label="Search">
+                                <button class="btn-buscar text-color-nav rounded-pill border-2 borde-color ps-3 pe-3"
+                                    type="submit">Buscar</button>
+                            </form>
+                        </li>
+
+
+                    </ul>
+
+                    <div class="header-actions ">
+
+                        <div class="lang-wrapper m-2 ">
+
+
+                            <i class="fa-solid fa-globe color-icono fs-5 fw-bold"></i>
+                            <select name="language" id="language" class="bg-transparent text-light border border-0">
+                                <option value="en" class="text-color-nav">EN</option>
+                                <option value="au" class="text-color-nav">ESP</option>
+                                <option value="ar" class="text-color-nav">TUCUMANO</option>
+                                <option value="tu" class="text-color-nav">FR</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!--BOTON DE REGISTRO-->
+                    <button
+                        class="btn-nav btn-lg text-color-nav m-2 rounded-pill fs-6 border-2 borde-color back-boton-nav"
+                        type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Registro</button>
+
+                    <!--BOTON DE LOGIN-->
+                    <button type="button"
+                        class="btn-nav btn-lg text-color-nav m-2 rounded-pill fs-6 border-2 borde-color back-boton-nav"
+                        data-bs-toggle="modal" data-bs-target="#exampleModallogin">
+                        Login
+                    </button>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Modal REGISTRO-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content back-modal text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form id="formulario">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                            <input type="text" class="form-control back-input text-light" id="nombrePersonal"
+                                name="nombrePersonal" placeholder="Diego" aria-describedby="emailHelp" required>
+
+                            <label for="exampleInputEmail1" class="form-label">Apellido</label>
+                            <input type="text" class="form-control back-input text-light" id="apellido" name="apellido"
+                                placeholder="Olmi" aria-describedby="emailHelp" required>
+
+                            <label for="exampleInputEmail1" class="form-label">Usuario</label>
+                            <input type="text" class="form-control back-input text-light" id="nombre" name="nombre"
+                                placeholder="DiegoOlmi" aria-describedby="emailHelp" required>
+
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" class="form-control back-input text-light" id="email" name="email"
+                                placeholder="diego_roman@gmail.com" aria-describedby="emailHelp" required
+                                onkeydown="validation()">
+
+
+                            <div id="emailHelp" class="form-text">Nunca compartiremos esta información.</div>
+                            <span id="textoValid"></span>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control back-input text-light" id="password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+
+                        </div>
+                        <button type="submit"
+                            class="btn-buscar text-color-nav rounded-2 border-2 borde-color ps-3 pe-3">Registrame</button>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-buscar text-color-nav rounded-2 border-2 borde-color ps-3 pe-3"
+                        data-bs-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--MODAL LOGIN-->
+    <div class="modal fade " id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content back-modal text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Inicio de sesion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label class="form-label">Usuario</label>
+                        <input type="text" class="form-control back-input text-light " id="username" required />
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="inputPassword" class="form-label">Contraseña</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control back-input text-light" id="contrasenia"
+                                required />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-buscar rounded-2 border-2 borde-color ps-3 pe-3"
+                        data-bs-dismiss="modal">
+                        Close
+                    </button>
+
+                    <button type="button" onclick="login()"
+                        class="btn-buscar text-color-nav rounded-2 border-2 borde-color ps-3 pe-3">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed minus ex. Nisi impedit doloremque tenetur
+        eius. Illum incidunt fuga velit obcaecati voluptatibus repudiandae hic nostrum veniam? Fugit, totam aspernatur!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam hic molestiae ad aliquid, dignissimos quasi
+        accusantium expedita, pariatur libero corrupti quis dolore? Ullam natus incidunt fugiat voluptate deleniti
+        voluptates
+        eos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque autem quod error atque. Corrupti exercitationem
+        doloremque dolorum natus numquam assumenda soluta, explicabo quos quibusdam similique qui tempora ex commodi
+        quo.lorem
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum officia, similique earum at a facilis quo ut
+        cupiditate, voluptates unde corporis rerum delectus quas incidunt natus quae itaque eius adipisci.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ea quod ipsa praesentium doloribus architecto
+        dicta
+        magni voluptas consectetur, maxime obcaecati quia eum laborum consequuntur sunt facilis dolore illo. Optio!
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed minus ex. Nisi impedit doloremque tenetur
+        eius. Illum incidunt fuga velit obcaecati voluptatibus repudiandae hic nostrum veniam? Fugit, totam aspernatur!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam hic molestiae ad aliquid, dignissimos quasi
+        accusantium expedita, pariatur libero corrupti quis dolore? Ullam natus incidunt fugiat voluptate deleniti
+        voluptates
+        eos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque autem quod error atque. Corrupti exercitationem
+        doloremque dolorum natus numquam assumenda soluta, explicabo quos quibusdam similique qui tempora ex commodi
+        quo.lorem
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum officia, similique earum at a facilis quo ut
+        cupiditate, voluptates unde corporis rerum delectus quas incidunt natus quae itaque eius adipisci.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ea quod ipsa praesentium doloribus architecto
+        dicta
+        magni voluptas consectetur, maxime obcaecati quia eum laborum consequuntur sunt facilis dolore illo. Optio!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed minus ex. Nisi impedit doloremque tenetur
+        eius. Illum incidunt fuga velit obcaecati voluptatibus repudiandae hic nostrum veniam? Fugit, totam aspernatur!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam hic molestiae ad aliquid, dignissimos quasi
+        accusantium expedita, pariatur libero corrupti quis dolore? Ullam natus incidunt fugiat voluptate deleniti
+        voluptates
+        eos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque autem quod error atque. Corrupti exercitationem
+        doloremque dolorum natus numquam assumenda soluta, explicabo quos quibusdam similique qui tempora ex commodi
+        quo.lorem
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum officia, similique earum at a facilis quo ut
+        cupiditate, voluptates unde corporis rerum delectus quas incidunt natus quae itaque eius adipisci.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ea quod ipsa praesentium doloribus architecto
+        dicta
+        magni voluptas consectetur, maxime obcaecati quia eum laborum consequuntur sunt facilis dolore illo. Optio!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed minus ex. Nisi impedit doloremque tenetur
+        eius. Illum incidunt fuga velit obcaecati voluptatibus repudiandae hic nostrum veniam? Fugit, totam aspernatur!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam hic molestiae ad aliquid, dignissimos quasi
+        accusantium expedita, pariatur libero corrupti quis dolore? Ullam natus incidunt fugiat voluptate deleniti
+        voluptates
+        eos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque autem quod error atque. Corrupti exercitationem
+        doloremque dolorum natus numquam assumenda soluta, explicabo quos quibusdam similique qui tempora ex commodi
+        quo.lorem
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum officia, similique earum at a facilis quo ut
+        cupiditate, voluptates unde corporis rerum delectus quas incidunt natus quae itaque eius adipisci.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ea quod ipsa praesentium doloribus architecto
+        dicta
+        magni voluptas consectetur, maxime obcaecati quia eum laborum consequuntur sunt facilis dolore illo. Optio!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed minus ex. Nisi impedit doloremque tenetur
+        eius. Illum incidunt fuga velit obcaecati voluptatibus repudiandae hic nostrum veniam? Fugit, totam aspernatur!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam hic molestiae ad aliquid, dignissimos quasi
+        accusantium expedita, pariatur libero corrupti quis dolore? Ullam natus incidunt fugiat voluptate deleniti
+        voluptates
+        eos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque autem quod error atque. Corrupti exercitationem
+        doloremque dolorum natus numquam assumenda soluta, explicabo quos quibusdam similique qui tempora ex commodi
+        quo.lorem
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum officia, similique earum at a facilis quo ut
+        cupiditate, voluptates unde corporis rerum delectus quas incidunt natus quae itaque eius adipisci.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ea quod ipsa praesentium doloribus architecto
+        dicta
+        magni voluptas consectetur, maxime obcaecati quia eum laborum consequuntur sunt facilis dolore illo. Optio!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed minus ex. Nisi impedit doloremque tenetur
+        eius. Illum incidunt fuga velit obcaecati voluptatibus repudiandae hic nostrum veniam? Fugit, totam aspernatur!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam hic molestiae ad aliquid, dignissimos quasi
+        accusantium expedita, pariatur libero corrupti quis dolore? Ullam natus incidunt fugiat voluptate deleniti
+        voluptates
+        eos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque autem quod error atque. Corrupti exercitationem
+        doloremque dolorum natus numquam assumenda soluta, explicabo quos quibusdam similique qui tempora ex commodi
+        quo.lorem
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum officia, similique earum at a facilis quo ut
+        cupiditate, voluptates unde corporis rerum delectus quas incidunt natus quae itaque eius adipisci.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ea quod ipsa praesentium doloribus architecto
+        dicta
+        magni voluptas consectetur, maxime obcaecati quia eum laborum consequuntur sunt facilis dolore illo. Optio!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed minus ex. Nisi impedit doloremque tenetur
+        eius. Illum incidunt fuga velit obcaecati voluptatibus repudiandae hic nostrum veniam? Fugit, totam aspernatur!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam hic molestiae ad aliquid, dignissimos quasi
+        accusantium expedita, pariatur libero corrupti quis dolore? Ullam natus incidunt fugiat voluptate deleniti
+        voluptates eos!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque autem quod error atque. Corrupti exercitationem
+        doloremque dolorum natus numquam assumenda soluta, explicabo quos quibusdam similique qui tempora ex commodi
+        quo.lorem
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum officia, similique earum at a facilis quo ut
+        cupiditate, voluptates unde corporis rerum delectus quas incidunt natus quae itaque eius adipisci.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ea quod ipsa praesentium doloribus architecto
+        dicta magni voluptas consectetur, maxime obcaecati quia eum laborum consequuntur sunt facilis dolore illo.
+        Optio!
+    </p>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('TD2ce-REKWjlw6382');
+        })();
+    </script>
+    <!-- <script>
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '#myForm')
+    </script> -->
+    <script type="text/javascript">
+
+        document.getElementById("formulario").addEventListener("submit", function (event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            const serviceID = "service_a2nkqyl";
+            const templateID = "template_avml9sa";
+
+            // send the email here
+            emailjs.sendForm(serviceID, templateID, this).then((response) => {
+                console.log('SUCCESS', response.status, response.text);
+                alert("SUCCESS!")
+            },
+                (error) => {
+                    console.log('FAILED...', error);
+                    alert("FAILED...", error);
+                }
+            );
+
+        });
+
+
+
+
+    </script>
+    <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+            let navbar = document.getElementById("navbar");
+            navbar.classList.toggle("abajo", window.scrollY > 0);
+        })
+    </script>
+    <script src="codigo.js"></script>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
