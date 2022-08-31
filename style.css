@@ -4,9 +4,9 @@ body {
     letter-spacing: 1px !important;
 }
 
-.abajo{
-    
-    background-color: #000336 ;
+.abajo {
+
+    background-color: #000336;
     transition: 1.5s;
 
 }
@@ -20,14 +20,14 @@ body {
     letter-spacing: 1px !important;
 }
 
-.icono-placholder{
-    font-family: 'Patua One',fontAwesome ;
+.icono-placholder {
+    font-family: 'Patua One', fontAwesome;
 }
 
 
 
 header {
-    height: 657px;
+    height: 750px;
     width: 100%;
     background-image: url(./imagenes/fondoavatar.png);
     background-repeat: no-repeat;
@@ -40,14 +40,14 @@ header {
 }
 
 
-.text-color-nav:hover{
+.text-color-nav:hover {
     color: white !important;
 
 }
 
 .btn-nav {
     width: 100px;
-    height: 40px ;
+    height: 40px;
 }
 
 .btn-buscar {
@@ -56,6 +56,7 @@ header {
     box-shadow: 0 0 40px 40px #09BC8A inset, 0 0 0 0 #09BC8A !important;
     -webkit-transition: all 150ms ease-in-out !important;
     transition: all 150ms ease-in-out !important;
+    text-decoration: none;
 }
 
 .btn-buscar:hover {
@@ -69,21 +70,22 @@ header {
     border-color: none;
 }
 
-.form-control:hover{
+.form-control:hover {
     box-shadow: 0 0 10px 0 #09BC8A inset, 0 0 10px 4px #09BC8A !important;
 }
 
 
-.borde-color{
+.borde-color {
     border: 2px solid #09BC8A !important;
-    
+
 }
 
-.back-boton-nav{
+.back-boton-nav {
     background-color: #000336 !important;
-    
+
 }
-.back-boton-nav:hover{
+
+.back-boton-nav:hover {
     background-color: #09BC8A !important;
     transition: 0.5s;
 }
@@ -94,10 +96,16 @@ header {
     padding-left: 10px;
 }
 
-.home-icono-nav{
+.color-icono-hd {
+    color: #09BC8A !important;
+
+}
+
+.home-icono-nav {
     color: #09BC8A !important;
 }
-.bg-transparent{
+
+.bg-transparent {
     background-color: #000336 !important;
 }
 
@@ -109,21 +117,49 @@ header {
     background-color: #292929 !important;
 }
 
-@media (max-width:992px){
-    .imagen-logo{
+.back-avatar-card {
+    background-color: transparent !important;
+}
+
+
+
+
+
+@media (max-width:992px) {
+    .imagen-logo {
         display: none;
     }
-    .home-nav{
+
+    .home-nav {
         display: none;
     }
-    
+
+    .descripcion-pelicula-principal {
+        display: none !important;
+    }
+
+    .titulo-pelicula-principal {
+        display: none;
+    }
+
 
 }
 
-@media (min-width:992px){
+@media (min-width:992px) {
     .home-icono-nav {
-            display: none !important;
-            
-        }
+        display: none !important;
+
+    }
 }
 
+@media (max-width: 280px) {
+    a.btn-buscar {
+        padding: 0px !important;
+
+    }
+
+    svg {
+        height: 30px;
+
+    }
+}
