@@ -1,4 +1,4 @@
-
+/* AQUI EMPIEZA EL CODIGO CSS PARA EL NAV */
 body {
     font-family: 'Patua One', cursive !important;
     letter-spacing: 1px !important;
@@ -27,6 +27,7 @@ body {
 
 
 header {
+    /*EN CASO DE NECESITAR SOLAMENTE EL NAV, DESCARTAR ESTA PROPIEDAD*/
     height: 750px;
     width: 100%;
     background-image: url(./imagenes/fondoavatar.png);
@@ -121,6 +122,10 @@ header {
     background-color: transparent !important;
 }
 
+.link-recup-contraseña {
+    text-decoration: none;
+    color: #09BC8A;
+}
 
 
 
@@ -163,3 +168,5 @@ header {
 
     }
 }
+
+/* AQUI TERMINA EL CODIGO CSS PARA EL NAV */

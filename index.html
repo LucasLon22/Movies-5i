@@ -18,8 +18,10 @@
 </head>
 
 <body>
+
     <!--Aqui comienza el nav -->
     <header class="position-relative">
+        <!--EN CASO DE NO NECESITAR LA IMAGEN DE FONDO NO USAR ESTE HEADER-->
         <nav class="navbar navbar-expand-lg p-0 fixed-top" id="navbar">
 
             <span class="imagen-logo">
@@ -73,6 +75,7 @@
                     <button
                         class="btn-nav btn-lg text-color-nav m-2 rounded-pill fs-6 border-2 borde-color back-boton-nav"
                         type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Registro</button>
+                    <!--TERMINA EL BOTON DE REGISTRO-->
 
                     <!--BOTON DE LOGIN-->
                     <button type="button"
@@ -80,10 +83,12 @@
                         data-bs-toggle="modal" data-bs-target="#exampleModallogin">
                         Login
                     </button>
+                    <!--TERMINA EL BOTON DE LOGIN-->
 
                 </div>
             </div>
         </nav>
+        <!--AQUI COMIENZA EL CODIGO DE LA IMAGEN DE LA PELICULA PRINCIPAL-->
         <div class="card text-bg-dark position-absolute top-50 start-50 translate-middle">
             <img src="./imagenes/avatar2-foto.jpg" class="card-img" alt="avatar-img-card">
             <div class="card-img-overlay">
@@ -104,15 +109,15 @@
                     <path
                         d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" />
                 </svg>
-
-
-
             </div>
-
         </div>
-
+        <!--AQUI TERMINA EL CODIGO DE LA IMAGEN DE LA PELICULA PRINCIPAL-->
 
     </header>
+    <!--Aqui TERMINA el nav -->
+
+
+
 
     <!-- Modal REGISTRO-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -169,6 +174,7 @@
             </div>
         </div>
     </div>
+    <!--AQUI TERMINA EL MODAL REGISTRO-->
 
     <!--MODAL LOGIN-->
     <div class="modal fade " id="exampleModallogin" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -191,6 +197,9 @@
                             <input type="password" class="form-control back-input text-light" id="contrasenia"
                                 required />
                         </div>
+                        <div class="mb-1 row mt-4 text-center">
+                            <a class="link-recup-contraseña fs-5" href="./recupero.html">¿Olvidaste tu contraseña?</a>
+                        </div>
                     </div>
 
                 </div>
@@ -206,8 +215,9 @@
             </div>
         </div>
     </div>
+    <!--AQUI TERMINA EL MODAL LOGIN-->
 
-
+    <!--PARRAFOS PARA PROBAR EL NAV, SE DEBEN ELIMINAR-->
     <h1>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed minus ex. Nisi impedit doloremque tenetur
         eius. Illum incidunt fuga velit obcaecati voluptatibus repudiandae hic nostrum veniam? Fugit, totam aspernatur!
@@ -319,6 +329,10 @@
         dicta magni voluptas consectetur, maxime obcaecati quia eum laborum consequuntur sunt facilis dolore illo.
         Optio!
     </p>
+    <!--AQUI TERMINAN LOS PARRAFOS QUE SE PUSIERON PARA PROBAR EL NAV-->
+
+
+    <!--ESTE ES EL COMIENZO DEL CODIGO PARA EL ENVIO DE MAIL AL MAIL DE ADMINISTRACIÓN-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
@@ -330,7 +344,6 @@
         emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '#myForm')
     </script> -->
     <script type="text/javascript">
-
         document.getElementById("formulario").addEventListener("submit", function (event) {
             event.preventDefault();
             // generate a five digit number for the contact_number variable
@@ -340,7 +353,7 @@
             // send the email here
             emailjs.sendForm(serviceID, templateID, this).then((response) => {
                 console.log('SUCCESS', response.status, response.text);
-                alert("SUCCESS!")
+                alert("Se ha registrado exitosamente!")
             },
                 (error) => {
                     console.log('FAILED...', error);
@@ -349,24 +362,21 @@
             );
 
         });
-
-
-
-
     </script>
-    <script type="text/javascript">
-        window.addEventListener("scroll", function () {
-            let navbar = document.getElementById("navbar");
-            navbar.classList.toggle("abajo", window.scrollY > 0);
-        })
-    </script>
+    <!--AQUI TERMINA CODIGO PARA EL ENVIO DE MAIL A MAIL DE ADMINISTRACIÓN-->
+
+
+    <!--VINCULO CON LA ARCHIVO JAVASCRIPT CODIGO.JS-->
     <script src="codigo.js"></script>
+    <!--VINCULO CON LA ARCHIVO JAVASCRIPT CODIGO.JS-->
 
-    <!-- JavaScript Bundle with Popper -->
+
+
+    <!-- VINCULO PARA BOOTSTRAP JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-
+    <!-- VINCULO PARA BOOTSTRAP JavaScript Bundle with Popper -->
 </body>
 
 </html>
