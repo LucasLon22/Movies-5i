@@ -1,0 +1,56 @@
+<!--Para cambiar la contraseña-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Imagenes/Logo solo 2.png">
+    <link rel="stylesheet" href="stylerecup.css">
+    <title>¿Olvidaste tu Contraseña?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form class="formulario-recupero back-modal text-light" id="formularioRecup">
+        <div class="mb-3">
+            <div class="row">
+                <img src="./imagenes/logo-gris.png" width="250" height="75" alt="logo-gris" class="col-3">
+                <h1 class="col-9">Recuperá tu Cuenta</h1>
+            </div>
+            <hr>
+
+            <label for="exampleInputEmail1" class="form-label">Nueva Contraseña</label>
+            <input type="text" name="newfirstpassword" class="form-control back-input text-light" id="newfirstpassword"
+                aria-describedby="emailHelp">
+
+            <label for="exampleInputEmail1" class="form-label">Repetir Contraseña</label>
+            <input type="password" name="newpassword" class="form-control back-input text-light" id="newpassword"
+                aria-describedby="emailHelp">
+
+        </div>
+
+        <div>
+            <a href="index.html"><button type="button" class="btn-buscar rounded-2 border-2 borde-color ps-3 pe-3 mb-2">
+                    Volver
+                </button></a>
+
+            <button type="submit" class="btn-buscar text-color-nav rounded-2 border-2 borde-color ps-3 pe-3 mb-2"
+                onclick="loginrecup()">Enviar</button>
+        </div>
+    </form>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+    <script src="codigoRecup.js"></script>
+
+
+</body>
+
+</html>

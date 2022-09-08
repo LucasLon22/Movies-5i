@@ -4,7 +4,7 @@ const formularioUi = document.getElementById("formulario")
 
 const datosUsuarios = [];
 
-const usuarios = (nombre, email, password, nombrePersonal, apellido) => {
+const usuarios = (nombrePersonal, apellido, nombre, email, password) => {
     const datos = {
         nombrePersonal: nombrePersonal,
         apellido: apellido,
@@ -29,13 +29,13 @@ const guardarDB = () => {
 formularioUi.addEventListener("submit", (e) => {
     e.preventDefault()
 
+    let nombrePersonal = document.getElementById("nombrePersonal").value;
+    let apellido = document.getElementById("apellido").value;
     let nombre = document.getElementById("nombre").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
-    let apellido = document.getElementById("apellido").value;
-    let nombrePersonal = document.getElementById("nombrePersonal").value;
 
-    usuarios(nombre, email, password, apellido, nombrePersonal)
+    usuarios(nombrePersonal, apellido, nombre, email, password)
     guardarDB()
 
     formularioUi.reset();
@@ -99,3 +99,25 @@ window.addEventListener("scroll", function () {
     let navbar = document.getElementById("navbar");
     navbar.classList.toggle("abajo", window.scrollY > 0);
 })
+
+
+function validationRecup() {
+    let formularioRecupero = document.getElementById("formulario-recup");
+    let emailRecupero = document.getElementById("emailRecupero").value;
+    let textoValidacion = document.getElementById("textoValidacion");
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (emailRecupero.match(pattern)) {
+        formularioRecupero.classList.add("valid");
+        formularioRecupero.classList.remove("invalid");
+        textoValidacion.innerHTML = "Tu Cuenta de correo es Valida";
+        textoValidacion.style.color = "#09BC8A"
+    }
+    else {
+        formularioRecupero.classList.remove("valid");
+        formularioRecupero.classList.add("invalid");
+        textoValidacion.innerHTML = "Por favor ingrese una cuenta de correo Valida";
+        textoValidacion.style.color = "#ff0000"
+    }
+
+}

@@ -16,15 +16,20 @@
 
 <body>
 
-    <form class="formulario-recupero  back-modal text-light">
+    <form class="formulario-recupero back-modal text-light" id="formulario-recup">
         <div class="mb-3">
-            <h1>Recuperá tu Cuenta</h1>
+            <div class="row">
+                <img src="./imagenes/logo-gris.png" width="250" height="75" alt="logo-gris" class="col-3">
+                <h1 class="col-9">Recuperá tu Cuenta</h1>
+            </div>
             <hr>
             <label for="exampleInputEmail1" class="form-label">Ingresá tu correo electrónico</label>
-            <input type="email" class="form-control back-input text-light" id="exampleInputEmail1"
-                aria-describedby="emailHelp">
+            <input type="email" name="emailRecupero" class="form-control back-input text-light" id="emailRecupero"
+                aria-describedby="emailHelp" onkeydown="validationRecup()" required>
+
             <div id="emailHelp" class="form-text text-light">Te enviaremos un correo, con los pasos a seguir para
                 recuperar tu cuenta.</div>
+            <span id="textoValidacion"></span>
         </div>
 
         <div>
@@ -32,16 +37,50 @@
                     Volver
                 </button></a>
 
-            <button type="button"
+            <button type="submit"
                 class="btn-buscar text-color-nav rounded-2 border-2 borde-color ps-3 pe-3 mb-2">Enviar</button>
         </div>
     </form>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('zP7d7s09UpbgFgIqM');
+        })();
+    </script>
+    <!-- <script>
+                emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '#myForm')
+            </script> -->
+    <script type="text/javascript">
+        document.getElementById("formulario-recup").addEventListener("submit", function (event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            const serviceID = "service_spwxwob";
+            const templateID = "template_k8a740w";
+
+            // send the email here
+            emailjs.sendForm(serviceID, templateID, this).then((response) => {
+                console.log('SUCCESS', response.status, response.text);
+                alert("Se ha enviado el correo!")
+            },
+                (error) => {
+                    console.log('FAILED...', error);
+                    alert("FAILED...", error);
+                }
+            );
+
+        });
+    </script>
+
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-    </div>
+
+
+    <script src="codigo.js"></script>
+
 </body>
 
 </html>
