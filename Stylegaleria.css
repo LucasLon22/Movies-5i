@@ -1,0 +1,54 @@
+.body{
+    background-image: url("./src/top-rated-bg.jpg");
+}
+.titulo{
+    color: rgb(233, 235, 238);
+    background-color: black;
+    width: 20rem;
+    border-radius: 10px;
+    -webkit-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
+    -moz-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
+    box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
+    
+}
+
+.titulo:hover{
+    color: rgb(249, 181, 55);
+    transition: 1s;
+    background-color: rgb(17, 5, 5);
+}
+
+.card{
+    -webkit-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
+    -moz-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
+    box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
+    background-color: black;
+   
+    
+}
+
+hr {border: 3px solid rgb(214, 211, 211); border-radius: 300px/10px; height: 0px; text-align: center;}
+
+.color-icono{
+    color: rgb(240, 230, 230);
+}
+
+.card:hover{
+    opacity: 70%;
+    transition: 0.5s;
+    
+}
+
+.card-title{
+    color: rgb(1, 1, 1);
+    
+}
+
+.card-text{
+    color: rgb(240, 230, 230);
+}
+
+.texto-descripcion{
+    color: rgb(240, 230, 230);
+}
+
