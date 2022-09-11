@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies 5i</title>
+    <title>Administración - Movies 5i </title>
     <link rel="stylesheet" href="style.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -15,12 +15,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/3aca23b465.js"
+      crossorigin="anonymous"
+    ></script>
 </head>
 
 <body>
 
     <!--Aqui comienza el nav -->
-
     <!--EN CASO DE NO NECESITAR LA IMAGEN DE FONDO NO USAR ESTE HEADER-->
     <div class="sticky-top">
         <nav class="navbar navbar-expand-lg p-0  fondo-nav-admin " id="">
@@ -84,13 +89,7 @@
             </div>
         </nav>
     </div>
-
-
-
     <!--Aqui TERMINA el nav -->
-
-
-
 
     <!-- Modal REGISTRO-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -101,7 +100,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
                     <form id="formulario">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Nombre</label>
@@ -120,29 +118,22 @@
                             <input type="email" class="form-control back-input text-light" id="email" name="email"
                                 placeholder="diego_roman@gmail.com" aria-describedby="emailHelp" required
                                 onkeydown="validation()">
-
-
                             <div id="emailHelp" class="form-text">Nunca compartiremos esta información.</div>
                             <span id="textoValid"></span>
-
                         </div>
-
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                             <input type="password" class="form-control back-input text-light" id="password" required>
                         </div>
                         <div class="mb-3 form-check">
-
                         </div>
                         <button type="submit"
                             class="btn-buscar text-color-nav rounded-2 border-2 borde-color ps-3 pe-3">Registrame</button>
                     </form>
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-buscar text-color-nav rounded-2 border-2 borde-color ps-3 pe-3"
                         data-bs-dismiss="modal">Cerrar</button>
-
                 </div>
             </div>
         </div>
@@ -151,11 +142,155 @@
 
 
 
-
-
-
-
-
+    
+    <!--INICIO Agragdo ACORREA -->
+    <div class="container">
+        <div class="mt-1 row">
+          <div class="col-md-12 col-lg-12">
+            <div class="bg-headerlg">
+              <section class="py-1 text-center container">
+                <div class="row py-lg-2">
+                  <div class="col-lg-12 col-md-12 mx-auto">
+                    <div class="d-flex justify-content-between">
+                      <div class="p-2"></div>
+                      <div class="p-2">
+                        <h1 class="fw-light fs-1 h1-header">
+                          Administrar Productos
+                        </h1>
+                      </div>
+                      <div class="p-2">
+                        <button
+                          type="button"
+                          class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModalAcorrea"
+                          id="btn_agregar"
+                        >
+                          Agregar <i class="fa-thin fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+  
+            <main>
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="exampleModalAcorrea"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Administración de Películas
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      
+                      <fieldset>
+                          <form class="row g-3" action="" id="formAdmin" onsubmit="Submit()">
+  
+                              <div class="col-md-12">
+                                <label for="codigo" class="form-label">Código</label>        
+                                <input type="text" name="codigo" id="codigo" placeholder="Código autogenerado" class="form-control" aria-label="Disabled input example" disabled>
+                              </div>
+                              
+                              <div class="col-md-12">
+                                  <label for="name" class="form-label">Nombre</label>                                
+                                  <input type="text" name="name" id="name" placeholder="Ingrese el nombre de la película" class="form-control"
+                                  minlength="2"                  
+                                  maxlength="30"
+                                  required>
+                              </div>
+  
+                              <div class="col-md-12">
+                                  <label for="categ" class="form-label">Categoría</label>
+                                  <input type="text" name="categ" id="categ" placeholder="Ingrese la catagoría de la película" class="form-control"
+                                  minlength="2"                  
+                                  maxlength="30"
+                                  required>
+                              </div>
+                                
+                              <div class="col-md-12">
+                                  <label for="desc" class="form-label">Descripción</label>
+                                  <input type="text" name="desc" id="desc" placeholder="Ingrese una breve descripción de la película" class="form-control" 
+                                      minlength="4"
+                                      maxlength="130"
+                                      required>
+                              </div>
+                               
+                              <div class="col-md-12">
+                                  <label for="enlace" class="form-label">URL</label>
+                                  <input type="text" name="enlace" id="enlace" placeholder="Ingrese el link de la película" class="form-control"
+                                  minlength="5"                  
+                                  maxlength="255"
+                                  pattern="https://.+" title="Incluir sólo direcciones seguras que comiencen con https://" 
+                                  required>  
+                              </div>
+  
+                              <div class="col-md-12" >
+                                <label for="caratula" class="form-label">Carátula</label>
+                                <input type="text" name="caratula" id="caratula" placeholder="Ingrese la carátula de la película" class="form-control"  
+                                minlength="1"                  
+                                maxlength="255"                              
+                                required> 
+                                <input class="mt-1" type="file" id="file" accept="image/*" onchange="mostrar()"/>
+                            </div>
+  
+                              <input type="reset" value="Reset" class="btn btn-secondary">              
+  
+                              <div class="modal-footer">
+                                  <!-- <input type="submit" name="" id="btn" value="Guardar" class="btn btn-primary" onclick="Submit()"> -->
+                                  <button class="btn btn-primary" type="submit">Guardar</button>
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>                                
+                              </div> 
+                            </form>                        
+                      </fieldset>
+                  
+                      <div id="msg"></div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- <fieldset> -->
+                 <!--  <legend> -->
+                      <!-- <h4>DB Local Storage - Películas</h4> -->
+                  <!-- </legend> -->
+          
+                  <table border="2" id="table" class="table table-striped table-hover table-bordered border-dark">
+                      <tr class="fw-bolder">
+                          <td class="col">Código </td> 
+                          <td class="col">Nombre </td>                    
+                          <td class="col">Categoría</td>
+                          <td class="col tdLengthDesc">Descripción</td>
+                          <td class="col">Enlace</td>
+                          <td class="col">Carátula</td>
+                          <td class="col">Publicado</td>
+                          <td class="col tdLengthOpc">Opciones</td>
+                      </tr>
+                  </table>
+          
+              <!-- </fieldset> -->
+  
+            </main>
+          </div>
+        </div>
+    </div>
+    <!--FIN Agragdo ACORREA -->
     
 
 
@@ -193,6 +328,20 @@
     <!--AQUI TERMINA CODIGO PARA EL ENVIO DE MAIL A MAIL DE ADMINISTRACIÓN-->
 
 
+
+
+
+    <!--INICIO Agregado ACORREA -->
+    <!-- INICIO - Esto debe ir en la página principal -->
+    <div class="container">               
+        <div class="mt-1 row" id="contenedor" ></div> 
+        <div class="mt-1 row" id="contenedor2"></div>             
+    </div> 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <!-- FIN - Esto debe ir en la página principal -->
+    <!--FIN Agregado ACORREA -->
+
+
     <!--VINCULO CON LA ARCHIVO JAVASCRIPT CODIGO.JS-->
     <script src="codigo.js"></script>
     <!--VINCULO CON LA ARCHIVO JAVASCRIPT CODIGO.JS-->
@@ -204,6 +353,11 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <!-- VINCULO PARA BOOTSTRAP JavaScript Bundle with Popper -->
+
+    <!--INICIO Agragdo ACORREA -->
+    <script src="./scriptAcorrea.js"></script> 
+    <script src="./scriptAdminAcorrea.js"></script>
+    <!--FIN Agragdo ACORREA -->
 </body>
 
 </html>

@@ -174,3 +174,14 @@ header {
 }
 
 /* AQUI TERMINA EL CODIGO CSS PARA EL NAV */
+
+
+/*INICIO AGREGADO ACORREA */
+.tdLengthDesc{
+    width: 300px;
+}
+
+.tdLengthOpc{
+    width:1500px ;
+}
+/*FIN AGREGADO ACORREA */
