@@ -1,6 +1,4 @@
-.body{
-    background-image: url("./");
-}
+
 .titulo{
     color: rgb(233, 235, 238);
     background-color: black;
@@ -10,6 +8,12 @@
     -moz-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
     box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
     
+}
+
+.contenedorgaleria{
+    background-image: url(./imagenes/srcBody/top-rated-bg.jpg);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .titulo:hover{
