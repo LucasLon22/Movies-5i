@@ -6,7 +6,7 @@ const cargarPeliculas = () => {
          
          let datos = JSON.parse(localStorage.getItem("usr_key"));
  
-         let peliculasDestacadas = '<h1>Destacadas</h1>';
+         let peliculasDestacadas = '<h3 class="text-white">Destacadas</h3>';
  
          datos.forEach(pelicula => {
             if (pelicula.destacado=="true" && pelicula.publicado=="true")
@@ -32,7 +32,7 @@ const cargarPeliculas = () => {
 
 
 
-         let peliculasNovedades = '<h1>Novedades</h1>';
+         let peliculasNovedades = '<h3 class="text-white">Novedades</h3>';
  
          datos.forEach(pelicula => {
             if (pelicula.publicado=="true")

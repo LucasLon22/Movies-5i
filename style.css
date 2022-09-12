@@ -177,6 +177,11 @@ header {
 
 
 /*INICIO AGREGADO ACORREA */
+.bodyAdminAcorrea{
+
+    background-color: #000336d4 !important ;
+}
+
 .tdLengthDesc{
     width: 300px;
 }
