@@ -228,4 +228,15 @@ hr {border: 3px solid rgb(214, 211, 211); border-radius: 300px/10px; height: 0px
 .texto-descripcion{
     color: rgb(240, 230, 230);
 }
-
+.footerGeneral{
+    background-color: #09BC8A;
+}
+.footerTitles{
+    color: #000336;
+}
+.footerLink{
+    color: #373737;
+}
+.iconos{
+    color: #000336;
+}
