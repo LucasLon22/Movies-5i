@@ -8,9 +8,10 @@ const cargarPeliculas = () => {
  
 
          
-
-
-         let peliculasDestacadas = ' <div class="titulo mx-4"><h1 class="mt-5 mx-4 .text-light p-1">Estrenos</h1></div> ';
+        let peliculasDestacadas = `<div class="contenedorgaleria">
+        <div class="titulo">
+            <h1 class="mt-5 mx-4 .text-light p-1">Destacadas</h1>
+        </div></div>`;
  
          datos.forEach(pelicula => {
             if (pelicula.destacado=="true" && pelicula.publicado=="true")
@@ -19,24 +20,31 @@ const cargarPeliculas = () => {
                     <div class="card mx-2 mb-5" style="width: 18rem;">
                     <img src="${pelicula.caratula}" class="card-img-top" alt="Pelicula">
                     <div class="card-body">
-                        <h4 class="card-title">${pelicula.name}</h4>
-                        <h5 class="card-title">${pelicula.categ}</h5>
-                        <p class="card-text">${pelicula.desc}</p>
+                        <h4 class="card-title text-light">${pelicula.name}</h4>
+                        <h5 class="card-title text-light">${pelicula.categ}</h5>
+                        <p class="card-text text-light">${pelicula.desc}</p>
                         <a href="${pelicula.enlace}" class="btn btn-primary">Reproducir</a>
                     </div>
                     </div>                 
                 ` 
             }
 
+
          });
-         if (peliculasDestacadas != '<h1>Destacadas</h1>'){                
+         if (peliculasDestacadas != `<div class="contenedorgaleria">
+         <div class="titulo">
+             <h1 class="mt-5 mx-4 .text-light p-1">Destacadas</h1>
+         </div></div>`){                
             document.getElementById("contenedor"). innerHTML = peliculasDestacadas
             console.log(datos)
-         }         
+         }     
 
 
 
-         let peliculasNovedades = '<h3 class="text-white">Novedades</h3>';
+         let peliculasNovedades = `<div class="contenedorgaleria">
+        <div class="titulo">
+            <h1 class="mt-5 mx-4 .text-light p-1">Novedades</h1>
+        </div></div>`;
  
          datos.forEach(pelicula => {
             if (pelicula.publicado=="true")
@@ -45,9 +53,9 @@ const cargarPeliculas = () => {
                     <div class="card mx-2 mb-5" style="width: 18rem;">
                     <img src="${pelicula.caratula}" class="card-img-top" alt="Pelicula">
                     <div class="card-body">
-                        <h4 class="card-title">${pelicula.name}</h4>
-                        <h5 class="card-title">${pelicula.categ}</h5>
-                        <p class="card-text">${pelicula.desc}</p>
+                        <h4 class="card-title text-light">${pelicula.name}</h4>
+                        <h5 class="card-title text-light">${pelicula.categ}</h5>
+                        <p class="card-text text-light">${pelicula.desc}</p>
                         <a href="${pelicula.enlace}" class="btn btn-primary">Reproducir</a>
                     </div>
                     </div>                 
@@ -56,7 +64,10 @@ const cargarPeliculas = () => {
          });
 
 
-         if (peliculasNovedades != '<h1>Novedades</h1>'){                
+         if (peliculasNovedades != `<div class="contenedorgaleria">
+         <div class="titulo">
+             <h1 class="mt-5 mx-4 .text-light p-1">Novedades</h1>
+         </div></div>`){                
             document.getElementById("contenedor2"). innerHTML = peliculasNovedades
             console.log(datos) 
          }
@@ -67,5 +78,3 @@ const cargarPeliculas = () => {
  }
  
  cargarPeliculas();
-
-
