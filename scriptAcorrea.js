@@ -6,7 +6,11 @@ const cargarPeliculas = () => {
          
          let datos = JSON.parse(localStorage.getItem("usr_key"));
  
-         let peliculasDestacadas = '<h3 class="text-white">Destacadas</h3>';
+
+         
+
+
+         let peliculasDestacadas = ' <div class="titulo mx-4"><h1 class="mt-5 mx-4 .text-light p-1">Estrenos</h1></div> ';
  
          datos.forEach(pelicula => {
             if (pelicula.destacado=="true" && pelicula.publicado=="true")
