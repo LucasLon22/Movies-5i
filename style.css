@@ -189,4 +189,18 @@ header {
 .tdLengthOpc{
     width:1500px ;
 }
+
+.footerGeneral_acorrea{
+    background-color: #09BC8A;
+}
+.footerTitles_acorrea{
+    color: #000336;
+}
+.footerLink_acorrea{
+    color: #373737;
+}
+.iconos_acorrea{
+    color: #000336;
+}
+
 /*FIN AGREGADO ACORREA */
