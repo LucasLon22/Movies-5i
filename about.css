@@ -36,7 +36,14 @@ body{
 .accordion-header{
     background-color: #000336;
 }
-
+/* card fotos */
+.cardFoto {
+    -webkit-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
+    -moz-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
+    box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
+    background-color: black;
+    
+}
 
 
 /*footer*/
