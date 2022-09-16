@@ -1,7 +1,7 @@
 
 .titulo{
     color: rgb(233, 235, 238);
-    background-color: black;
+    background-color: rgb(28, 26, 43);
     width: 20rem;
     border-radius: 10px;
     -webkit-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
@@ -38,13 +38,14 @@ hr {border: 3px solid rgb(214, 211, 211); border-radius: 300px/10px; height: 0px
 }
 
 .card:hover{
-    opacity: 70%;
+    opacity: 60%;
     transition: 0.5s;
+    cursor: auto;
     
 }
 
 .card-title{
-    color: rgb(1, 1, 1);
+    color: rgb(213, 204, 204);
     
 }
 
