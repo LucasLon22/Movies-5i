@@ -175,6 +175,7 @@ header {
 
 /* AQUI TERMINA EL CODIGO CSS PARA EL NAV */
 
+
 .body{
     background-image: url("./src/top-rated-bg.jpg");
 }
@@ -240,3 +241,33 @@ hr {border: 3px solid rgb(214, 211, 211); border-radius: 300px/10px; height: 0px
 .iconos{
     color: #000336;
 }
+
+
+/*INICIO AGREGADO ACORREA */
+.bodyAdminAcorrea{
+
+    background-color: #000336d4 !important ;
+}
+
+.tdLengthDesc{
+    width: 300px;
+}
+
+.tdLengthOpc{
+    width:1500px ;
+}
+
+.footerGeneral_acorrea{
+    background-color: #09BC8A;
+}
+.footerTitles_acorrea{
+    color: #000336;
+}
+.footerLink_acorrea{
+    color: #373737;
+}
+.iconos_acorrea{
+    color: #000336;
+}
+
+/*FIN AGREGADO ACORREA */
