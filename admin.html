@@ -272,16 +272,16 @@
                       <!-- <h4>DB Local Storage - Películas</h4> -->
                   <!-- </legend> -->
           
-                  <table border="2" id="table" class="table table-hover table-bordered border-dark bg-light">
-                      <tr class="fw-bolder">
+                  <table border="2" id="table" class="table table-hover table-bordered border-dark bg-light tablaAdminAcorrea">
+                      <tr class="fw-bolder fw-bolderAcorrea">
                           <td class="col">Código </td> 
                           <td class="col">Nombre </td>                    
                           <td class="col">Categoría</td>
-                          <td class="col tdLengthDesc">Descripción</td>
+                          <td class="col  ">Descripción</td>
                           <td class="col">Enlace</td>
                           <td class="col">Carátula</td>
                           <td class="col">Publicado</td>
-                          <td class="col tdLengthOpc">Opciones</td>
+                          <td class="col  ">Opciones</td>
                       </tr>
                   </table>
           
@@ -334,10 +334,29 @@
 
     <!--INICIO Agregado ACORREA -->
     <!-- INICIO - Esto debe ir en la página principal -->
-    <div class="container">               
-        <div class="mt-1 row" id="contenedor" ></div> 
-        <div class="mt-1 row" id="contenedor2"></div>             
+    <!-- Destacadas -->
+    <div class="container contenedorgaleria">
+      <div class="titulo">
+        <h1 class="mt-5 mx-4 .text-light p-1">Destacadas</h1>
+      </div>
+    </div>   
+          
+    <div class="container">
+      <div class="row" id="contenedor"></div>                      
     </div> 
+  
+    <!-- Novedades -->
+    <div class="container contenedorgaleria">
+      <div class="titulo">
+        <h1 class="mt-5 mx-4 .text-light p-1">Novedades</h1>
+      </div>
+    </div>
+  
+    <div class="container"> 
+      <div class="row" id="contenedor2"></div>
+      <a href="./adminDesdeApi.html" class="my-5">Agregar desde themoviedb.org</a>                     
+    </div>
+    
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <!-- FIN - Esto debe ir en la página principal -->
@@ -352,7 +371,7 @@
     <!--VINCULO CON LA ARCHIVO JAVASCRIPT CODIGO.JS-->
 
     <!--INICIO Agregado ACORREA -->
-    <div class="container-fluid footerGeneral_acorrea">
+    <div class="container-fluid footerGeneral_acorrea mt-5">
         <footer class="py-5 ">
           <div class="row">
             <div class="col-6 col-md-2 mb-3">
