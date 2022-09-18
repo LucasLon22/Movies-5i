@@ -5,8 +5,6 @@ const cargarPeliculas = () => {
         //  const datos = await respuesta.json(); 
          
          let datos = JSON.parse(localStorage.getItem("usr_key"));
- 
-
          
         let peliculasDestacadas = ``;
  
@@ -15,27 +13,25 @@ const cargarPeliculas = () => {
             {
                 peliculasDestacadas += ` 
                 <div class="col-sm-12 col-md-6 col-lg-3 mb-2">
-                    <div class="card mb-1" >
-                    <img src="${pelicula.caratula}" class="card-img-top" alt="Pelicula">
-                    <div class="card-body">
-                        <h4 class="card-title text-light">${pelicula.name}</h4>
-                        <h5 class="card-title text-light">${pelicula.categ}</h5>
-                        <p class="card-text text-light">${pelicula.desc}</p>
-                        <a href="${pelicula.enlace}" class="btn btn-primary">Reproducir</a>
-                    </div>
+                    <div class="card mb-1 box">
+                        <img src="${pelicula.caratula}" class="card-img-top" alt="Pelicula">
+                        <div class="card-body box">
+                            <div>
+                                <h4 class="card-title text-light">${pelicula.name}</h4>
+                                <h5 class="card-title text-light">${pelicula.categ}</h5>
+                                <p class="card-text text-light">${pelicula.desc}</p>
+                            </div>    
+                            <a href="${pelicula.enlace}" class="btn btn-outline-info link-light">Reproducir <i class="bi bi-play-fill"></i></a>
+                        </div>
                     </div> 
                 </div>                
                 ` 
             }
-
-
          });
          if (peliculasDestacadas != ``){                
             document.getElementById("contenedor"). innerHTML = peliculasDestacadas
             console.log(datos)
-         }     
-
-
+         } 
 
          let peliculasNovedades = ``;
  
@@ -43,15 +39,19 @@ const cargarPeliculas = () => {
             if (pelicula.publicado=="true")
             {
                 peliculasNovedades += ` 
-                    <div class="card mx-2 mb-5" style="width: 18rem;">
+                <div class="col-sm-12 col-md-6 col-lg-3 mb-2">
+                    <div class="card mb-1 box">
                     <img src="${pelicula.caratula}" class="card-img-top" alt="Pelicula">
-                    <div class="card-body">
-                        <h4 class="card-title text-light">${pelicula.name}</h4>
-                        <h5 class="card-title text-light">${pelicula.categ}</h5>
-                        <p class="card-text text-light">${pelicula.desc}</p>
-                        <a href="${pelicula.enlace}" class="btn btn-primary">Reproducir</a>
-                    </div>
-                    </div>                 
+                        <div class="card-body box">
+                            <div>
+                                <h4 class="card-title text-light">${pelicula.name}</h4>
+                                <h5 class="card-title text-light">${pelicula.categ}</h5>
+                                <p class="card-text text-light">${pelicula.desc}</p>
+                            </div> 
+                            <a href="${pelicula.enlace}"  class="btn btn-outline-info link-light">Reproducir <i class="bi bi-play-fill"></i></a>
+                        </div>
+                    </div> 
+                </div>                 
                 ` 
             }
          });

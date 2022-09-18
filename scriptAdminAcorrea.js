@@ -138,8 +138,9 @@ function insert(readData){
 
     /*row.insertCell(6).innerHTML =`<input type="checkbox" id="publicado" name="publicado" value="false" onclick = publicar(this)></input>`;*/ 
     
-    row.insertCell(7).innerHTML =`<button class="btn" onclick = edit(this,1)><i class="fa fa-pencil"></i></button> <button class="btn" onclick = remove(this)><i class="fa fa-trash"></i></button> <button id="destacado" name="destacado" value="false" class="btn" onclick = destacar(this)><i class="fa fa-star"></i></button>`;
+    row.insertCell(7).innerHTML =`<button class="btn" onclick = edit(this,1)><i class="fa fa-pencil"></i></button> <button class="btn" onclick = removeAcorrea(this)><i class="fa fa-trash"></i></button> <button id="destacado" name="destacado" value="false" class="btn" onclick = destacar(this)><i class="fa fa-star"></i></button>`;
     
+
     
 }                                                                             
 
@@ -191,12 +192,17 @@ function update(){
 }
 
 //DELETE
-function remove(td){
-    edit(td, 0);
+function removeAcorrea(td){
 
+    console.log(arrayUsuarios, "<--arrayUsuarios antes editttttttttt 11111")
+    edit(td, 0);
+    console.log(arrayUsuarios, "<--arrayUsuarios después  editttttttttt 222222")
+
+    console.log(arrayUsuarios, "<--arrayUsuarios 1")
     row = td.parentElement.parentElement;
-   
-    // let ans = confirm("¿Está seguro que desea eliminar este registro?");
+    console.log(arrayUsuarios, "<--arrayUsuarios 2")
+    let valor = document.getElementById("codigo").value
+
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
           confirmButton: 'btn btn-success',
@@ -214,18 +220,16 @@ function remove(td){
         cancelButtonText: 'No, cancelar!',
         reverseButtons: true
       }).then((result) => {
-        if (result.isConfirmed) {
-          /* swalWithBootstrapButtons.fire(
-            '¡Registro eliminado!'          
+        if (result.isConfirmed) {   
+      
             
-          ) */
-        
-          //console.log(document.getElementById("codigo").value, "<-Código borrar");
-          let arrayIndex = arrayUsuarios.findIndex(  element  => element.codigo === document.getElementById("codigo").value);
-          //console.log(arrayIndex, "arrayIndex")
-          //console.log(arrayUsuarios, "<--antes slice")
-          arrayUsuarios.splice(arrayIndex, 1);   
-          //console.log(arrayUsuarios, "<--después slice")
+           console.log(valor, "valorxxxxxxxxxxxxxxx dentro")
+           console.log(arrayUsuarios, "<--arrayUsuarios 3")
+           let arrayIndex = arrayUsuarios.findIndex(  element  => element.codigo === valor);
+           console.log(arrayIndex, "4 arrayIndex")
+           console.log(arrayUsuarios, "<--antes splice 5")
+           arrayUsuarios.splice(arrayIndex, 1);   
+           console.log(arrayUsuarios, "<--después splice 6")
   
           guardarDBacorrea();
   
@@ -234,14 +238,14 @@ function remove(td){
         
         
         } else if (
-          /* Read more about handling dismissals below */
+          
           result.dismiss === Swal.DismissReason.cancel
         ) {
-          /* swalWithBootstrapButtons.fire(
-            'No se eliminó el registro.'             
-          ) */
+          
         }
       })
+
+      console.log(valor, "valorxxxxxxxxxxxxxxx fuera")
 
     document.getElementById("formAdmin").reset();
 }
@@ -288,12 +292,12 @@ function destacar(td){
    if (arrayUsuarios[arrayIndex].destacado === "false")
    {
         arrayUsuarios[arrayIndex].destacado="true";
-        row.cells[7].innerHTML = `<button class="btn" onclick = edit(this,1)><i class="fa fa-pencil"></i></button> <button class="btn" onclick = remove(this)><i class="fa fa-trash"></i></button> <button id="destacado" name="destacado" value='true'  class="btn btn-warning" onclick = destacar(this)><i class="fa fa-star"></i></button>`; 
+        row.cells[7].innerHTML = `<button class="btn" onclick = edit(this,1)><i class="fa fa-pencil"></i></button> <button class="btn" onclick = removeAcorrea(this)><i class="fa fa-trash"></i></button> <button id="destacado" name="destacado" value='true'  class="btn btn-warning" onclick = destacar(this)><i class="fa fa-star"></i></button>`; 
         //console.log("<--Es false")   
     }
     else{
         arrayUsuarios[arrayIndex].destacado="false";
-        row.cells[7].innerHTML =`<button class="btn" onclick = edit(this,1)><i class="fa fa-pencil"></i></button> <button class="btn" onclick = remove(this)><i class="fa fa-trash"></i></button> <button id="destacado" name="destacado" value='false' class="btn" onclick = destacar(this)><i class="fa fa-star"></i></button>`; 
+        row.cells[7].innerHTML =`<button class="btn" onclick = edit(this,1)><i class="fa fa-pencil"></i></button> <button class="btn" onclick = removeAcorrea(this)><i class="fa fa-trash"></i></button> <button id="destacado" name="destacado" value='false' class="btn" onclick = destacar(this)><i class="fa fa-star"></i></button>`; 
         //console.log("<--Es true")   
     }
     //console.log(arrayUsuarios, "<--después update destacar")
@@ -320,6 +324,8 @@ const guardarDBacorrea = () => {
 
 const mostrarDB = () => {
     let arrayUsuariosAux = JSON.parse(localStorage.getItem("usr_key"));
+
+    console.log(arrayUsuarios, "arrayUsuarios mostrar dbbbbbbbbbb")
   
     if (arrayUsuariosAux === null) {
         arrayUsuariosAux = [];
@@ -328,15 +334,37 @@ const mostrarDB = () => {
         let row
         let value_cheked
         let value_destacado
-
+        let celda
         arrayUsuariosAux.forEach((element) => {          
             row = table.insertRow();
-            row.insertCell(0).innerHTML = element.codigo;
-            row.insertCell(1).innerHTML = element.name;
-            row.insertCell(2).innerHTML = element.categ;
-            row.insertCell(3).innerHTML = element.desc;
-            row.insertCell(4).innerHTML = element.enlace;
-            row.insertCell(5).innerHTML = element.caratula;
+            
+            celda = row.insertCell(0)
+            celda.innerHTML = element.codigo;
+            celda.setAttribute("data-titulo","Código: ")
+
+            celda = row.insertCell(1)
+            celda.innerHTML = element.name;
+            celda.setAttribute("data-titulo","Nombre: ")
+            
+            celda = row.insertCell(2)
+            celda.innerHTML = element.categ;
+            celda.setAttribute("data-titulo","Categoría: ")
+
+            celda = row.insertCell(3)
+            celda.innerHTML = element.desc;
+            celda.setAttribute("data-titulo","Descripción: ")
+         
+            celda = row.insertCell(4)
+            celda.innerHTML = element.enlace;
+            celda.className = "celdaEnlace";
+            celda.setAttribute("data-titulo","Enlace:")
+            
+            
+            celda = row.insertCell(5)
+            celda.innerHTML = element.caratula;
+            celda.setAttribute("data-titulo","Carátula:")
+            celda.className = "celdaCaratula";
+            
             if (element.publicado=="true") {
                 value_cheked = "value='true' checked"
             }
@@ -344,12 +372,13 @@ const mostrarDB = () => {
                 value_cheked = "value='false'"
             }
 
-            let newcell = row.insertCell(6);
-            newcell.innerHTML =`<input type="checkbox" id="publicado" name="publicado"  ${value_cheked} onclick = publicar(this)></input>`;
-            newcell.className = "text-center";
+            
 
+            celda = row.insertCell(6);
+            celda.innerHTML =`<input type="checkbox" id="publicado" name="publicado"  ${value_cheked} onclick = publicar(this)></input>`;
+            celda.setAttribute("data-titulo","Publicado: ")
+            celda.className = "text-centerPublicado"; 
 
-            /*row.insertCell(6).innerHTML =`<input type="checkbox" id="publicado" name="publicado"  ${value_cheked} onclick = publicar(this)></input>`;*/  
             
             if (element.destacado=="true") {
                 value_destacado = "value='true' class='btn btn-warning'"
@@ -358,11 +387,11 @@ const mostrarDB = () => {
                 value_destacado = "value='false' class='btn'"
             }
             
-            row.insertCell(7).innerHTML =`<button class="btn" onclick = edit(this,1)><i class="fa fa-pencil"></i></button> <button class="btn" onclick = remove(this)><i class="fa fa-trash"></i></button> <button id="destacado" name="destacado" ${value_destacado} onclick = destacar(this)><i class="fa fa-star"></i></button>`;    
-            
-            arrayUsuarios.push(element);
+            celda = row.insertCell(7)
+            celda.innerHTML =`<button class="btn" onclick = edit(this,1)><i class="fa fa-pencil"></i></button> <button class="btn" onclick = removeAcorrea(this)><i class="fa fa-trash"></i></button> <button id="destacado" name="destacado" ${value_destacado} onclick = destacar(this)><i class="fa fa-star"></i></button>`;    
+            celda.setAttribute("data-titulo","Opciones: ")
 
-            //console.log(element, "<-- Inserto estos elementos")
+            arrayUsuarios.push(element);          
 
       });
       //console.log(element, "<-- Inserto estos elementos")
