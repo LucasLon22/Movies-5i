@@ -1,7 +1,12 @@
-*{ color: white;}
+*{ color: white; font-family: 'Roboto Condensed', sans-serif;}
 .contactoTitulo{margin-top: 2rem; color: #09BC8A;}
 .body{background-color:#000336;}
-.transparente{opacity: 0.8;}
+.formularioContacto{
+    width:55rem
+    
+}
+
+
 
 /*footer*/
 .footerGeneral{
@@ -184,12 +189,23 @@ nav{
 
 /* AQUI TERMINA EL CODIGO CSS PARA EL NAV */
 
-@media(max-width:400px){
+@media(max-width:900px){
 .mapa{
     width:300px;
-    
- 
 }
+.formularioContacto{
+    width:25rem
+    
 }
 
+}
+
+@media(max-width:500px){
+    
+    .formularioContacto{
+        width:20rem
+        
+    }
+    
+    }
 
