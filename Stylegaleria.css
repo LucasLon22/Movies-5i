@@ -44,7 +44,7 @@ hr {border: 3px solid rgb(214, 211, 211); border-radius: 300px/10px; height: 0px
 }
 
 .card-title{
-    color: rgb(1, 1, 1);
+    color: rgb(255, 255, 255);
     
 }
 
@@ -54,5 +54,8 @@ hr {border: 3px solid rgb(214, 211, 211); border-radius: 300px/10px; height: 0px
 
 .texto-descripcion{
     color: rgb(240, 230, 230);
+}
+.linkpeli{
+    text-decoration: none;
 }
 

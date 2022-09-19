@@ -242,6 +242,9 @@ hr {border: 3px solid rgb(214, 211, 211); border-radius: 300px/10px; height: 0px
 .iconos{
     color: #000336;
 }
+.linkpeli{
+    text-decoration: none;
+}
 
 
 /*INICIO AGREGADO ACORREA */
