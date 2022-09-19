@@ -334,7 +334,7 @@ hr {border: 3px solid rgb(214, 211, 211); border-radius: 300px/10px; height: 0px
        
     .tablaAdminAcorrea td[data-titulo]::before{
         content: attr(data-titulo);
-        width: 90px;
+        width: 105px;
         color: rgb(54, 92, 148);
         font-weight: bold;
     }

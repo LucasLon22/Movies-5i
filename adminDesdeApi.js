@@ -83,7 +83,9 @@ const cargarPeliculas2 = async (page) => {
          /* console.log(datos, "<------datossss") */
         
          let arrayUsuariosAux = JSON.parse(localStorage.getItem("usr_key"));
-         
+         if (arrayUsuariosAux === null) {
+            arrayUsuariosAux = [];
+        }
          /* console.log(arrayUsuariosAux, "<<<<<<cargarPeliculas2"); */
 
          let generoString
