@@ -1,3 +1,5 @@
+    /* Aqui comienza el main  */
+
 :root {
 	--fondo: #000000;
 }
@@ -28,7 +30,7 @@
 	font-size: 16px;
 	min-height: 40.62em;
 	color: #fff;
-	background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0,0,0, 1) 100%), url(./651486.png);
+	background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0,0,0, 1) 100%), url(./detalle/651486.png);
 	background-position: center center;
 	background-size: cover;
 	margin-bottom: 3.12em;
@@ -41,7 +43,7 @@
 	margin-bottom: 6.25em;
 }
 
-.pelicula-principal .titulo {
+.pelicula-principal .titulopeli {
 	font-weight: 600;
 	font-size: 3.12em;
 	margin-bottom: 0.4em;
@@ -85,6 +87,8 @@
 		max-width: 100%;
 	}}
 
+    /* Aqui termina el main  */
+
 	
 	/* Aqui comienzan las cards */
 	
@@ -96,7 +100,7 @@
     font-size: 130%;
     color:rgb(255, 255, 255);
 	}
-.card{
+.cardreparto{
 	background-color: #000;
 	position: relative;
 	padding: 4%;
@@ -106,7 +110,7 @@
 	margin-block: 14%;
 	margin-top: 0%;
 	}
-.card .face{
+.cardreparto .face{
 	position: absolute;
 	width: 60%;
 	height: 105%;
@@ -115,17 +119,17 @@
 	overflow: hidden;
 	transition: .5s;
 	}
-.card .front{
+.cardreparto .front{
 	transform: perspective(600px) rotateY(0deg);
 	box-shadow: 0 5px 10px rgb(255, 255, 255);
 	}
-.card .front img{
+.cardreparto .front img{
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
     }
-.card .front h3{
+.cardreparto .front h3{
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -136,7 +140,7 @@
 	text-align: center;
 	font-size: 0spx;
 	}
-.card .back{
+.cardreparto .back{
 	transform: perspective(600px) rotateY(180deg);
 	background: #09BC8A;
 	padding: 20px;
@@ -147,26 +151,26 @@
 	text-align: center;
 	box-shadow: 0 5px 10px rgb(255, 255, 255);
 	}
-.card .back .link{
+.cardreparto .back .link{
 	border-top: solid 1px #ffffff;
 	height: 50px;
 	line-height: 50px;
 	}
-.card .back .link a{
+.cardreparto .back .link a{
 	color: #ffffff;
 	}
-.card .back{
+.cardreparto .back{
 	font-size: 12px;
 	margin-top: 0px;
 	letter-spacing: 2px;
 	}
-.card .back p{
+.cardreparto .back p{
 	letter-spacing: 1px;
 	}
-.card:hover .front{
+.cardreparto:hover .front{
 	transform: perspective(600px) rotateY(180deg);
 	}
-.card:hover .back{
+.cardreparto:hover .back{
 	transform: perspective(600px) rotateY(360deg);
 	}
 .name{
