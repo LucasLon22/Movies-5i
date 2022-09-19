@@ -11,7 +11,8 @@
 }
 
 .contenedorgaleria{
-    background-image: url(./imagenes/srcBody/top-rated-bg.jpg);
+    background-color: rgb(3, 6, 22);
+    /* background-image: url(./imagenes/srcBody/nuevo\ fondo.jpg); */
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -55,7 +56,5 @@ hr {border: 3px solid rgb(214, 211, 211); border-radius: 300px/10px; height: 0px
 .texto-descripcion{
     color: rgb(240, 230, 230);
 }
-.linkpeli{
-    text-decoration: none;
-}
+
 
