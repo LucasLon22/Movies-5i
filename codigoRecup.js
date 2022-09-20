@@ -42,6 +42,6 @@ const loginrecup = () => {
     if (index != -1) {
         window.location.assign("./admin.html")
     } else {
-        alert("Las contraseñas no coinciden")
+        swal("Oops", "Las contraseñas no coinciden", "error")
     }
 }

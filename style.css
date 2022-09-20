@@ -1,4 +1,3 @@
-
 /* AQUI EMPIEZA EL CODIGO CSS PARA EL NAV */
 body {
     font-family: 'Patua One', cursive !important;
@@ -177,170 +176,112 @@ header {
 /* AQUI TERMINA EL CODIGO CSS PARA EL NAV */
 
 
-.body{
+.body {
     background-image: url("./src/top-rated-bg.jpg");
 }
-.titulo{
+
+.titulo {
     color: rgb(233, 235, 238);
     background-color: black;
     width: 20rem;
     border-radius: 10px;
-    -webkit-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
-    -moz-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
-    box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
-    
+    -webkit-box-shadow: 6px 4px 12px -6px rgba(250, 242, 250, 1);
+    -moz-box-shadow: 6px 4px 12px -6px rgba(250, 242, 250, 1);
+    box-shadow: 6px 4px 12px -6px rgba(250, 242, 250, 1);
+
 }
 
-.titulo:hover{
+.titulo:hover {
     color: rgb(249, 181, 55);
     transition: 1s;
     background-color: rgb(17, 5, 5);
 }
 
-.card{
-    -webkit-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
-    -moz-box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
-    box-shadow: 6px 4px 12px -6px rgba(250,242,250,1);
+.card {
+    -webkit-box-shadow: 6px 4px 12px -6px rgba(250, 242, 250, 1);
+    -moz-box-shadow: 6px 4px 12px -6px rgba(250, 242, 250, 1);
+    box-shadow: 6px 4px 12px -6px rgba(250, 242, 250, 1);
     background-color: black;
-   
-    
-}
-
-hr {border: 3px solid rgb(214, 211, 211); border-radius: 300px/10px; height: 0px; text-align: center;}
-
-.color-icono{
-    color: rgb(240, 230, 230);
-}
-
-.card:hover{
-    opacity: 70%;
-    transition: 0.5s;
-    
-}
-
-.card-title{
-    color: rgb(1, 1, 1);
-    
-}
-
-.card-text{
-    color: rgb(240, 230, 230);
-}
-
-.texto-descripcion{
-    color: rgb(240, 230, 230);
-}
-.footerGeneral{
-    background-color: #09BC8A;
-}
-.footerTitles{
-    color: #000336;
-}
-.footerLink{
-    color: #373737;
-}
-.iconos{
-    color: #000336;
-}
-.linkpeli{
-    text-decoration: none;
-}
 
 
-/*INICIO AGREGADO ACORREA */
-.bodyAdminAcorrea{
-
-    background-color: #000336d4 !important ;
 }
 
-.tdLengthDesc{
-    width: 300px;
-}
-
-.tdLengthOpc{
-    width:1500px ;
-}
-
-.footerGeneral_acorrea{
-    background-color: #09BC8A;
-}
-.footerTitles_acorrea{
-    color: #000336;
-}
-.footerLink_acorrea{
-    color: #373737;
-}
-.iconos_acorrea{
-    color: #000336;
-}
-
-.text-centerPublicado{
+hr {
+    border: 3px solid rgb(214, 211, 211);
+    border-radius: 300px/10px;
+    height: 0px;
     text-align: center;
 }
 
-.neon-text {
-    font-family:monospace;
-    font-size: 1.5rem;
-    color: #070713;
-  }
+.color-icono {
+    color: rgb(240, 230, 230);
+}
 
-  .neon-text {
-    text-shadow: 
-    0 0 5px rgb(48, 18, 169),
-    0 0 10px rgb(5, 160, 227),
-    0 0 20px rgb(2, 66, 93),
-    0 0 40px rgba(38,104,127,1),
-    0 0 80px rgba(38,104,127,1),
-    0 0 90px rgba(38,104,127,1),
-    0 0 100px rgba(38,104,127,1),
-    0 0 140px rgba(38,104,127,1),
-    0 0 180px rgb(13, 70, 91);
-  }
+.card:hover {
+    opacity: 70%;
+    transition: 0.5s;
 
-.box{
-    box-sizing: border-box;
-    /* width: 100%; */
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: start; 
-    flex-direction: column;
+}
+
+.card-title {
+    color: rgb(1, 1, 1);
+
+}
+
+.card-text {
+    color: rgb(240, 230, 230);
+}
+
+.texto-descripcion {
+    color: rgb(240, 230, 230);
+}
+
+.footerGeneral {
+    background-color: #09BC8A;
+}
+
+.footerTitles {
+    color: #000336;
+}
+
+.footerLink {
+    color: #373737;
+}
+
+.iconos {
+    color: #000336;
 }
 
 
-@media ( max-width: 30em ){
-    .tablaAdminAcorrea{
-        width: 100%;
-        font-size: .90em;
-        font-family:serif
-        
-    }
-    .tablaAdminAcorrea tr{
-        /* background-color: green; */
-        display: flex;
-        flex-direction: column;
-        /* border: 1px solid grey;   */
-       /* padding: 1em;  */
-          margin-bottom: 0.09em;  
-    }
 
-    .fw-bolderAcorrea td{
-        display: none;
-    }
+/*INICIO AGREGADO ACORREA */
+.bodyAdminAcorrea {
 
-    .tablaAdminAcorrea td[data-titulo]{
-        display: flex;        
-    }
-       
-    .tablaAdminAcorrea td[data-titulo]::before{
-        content: attr(data-titulo);
-        width: 105px;
-        color: rgb(54, 92, 148);
-        font-weight: bold;
-    }
-        
-    .text-centerPublicado{
-        text-align:left;
-    }
+    background-color: #000336d4 !important;
 }
+
+.tdLengthDesc {
+    width: 300px;
+}
+
+.tdLengthOpc {
+    width: 1500px;
+}
+
+.footerGeneral_acorrea {
+    background-color: #09BC8A;
+}
+
+.footerTitles_acorrea {
+    color: #000336;
+}
+
+.footerLink_acorrea {
+    color: #373737;
+}
+
+.iconos_acorrea {
+    color: #000336;
+}
+
 /*FIN AGREGADO ACORREA */
