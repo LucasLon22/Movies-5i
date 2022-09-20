@@ -348,11 +348,12 @@ const mostrarDB = () => {
             
             celda = row.insertCell(2)
             celda.innerHTML = element.categ;
-            celda.setAttribute("data-titulo","Categoría: ")
+            celda.setAttribute("data-titulo","Categoría: ") 
 
             celda = row.insertCell(3)
             celda.innerHTML = element.desc;
             celda.setAttribute("data-titulo","Descripción: ")
+                         
          
             celda = row.insertCell(4)
             celda.innerHTML = element.enlace;
