@@ -244,7 +244,7 @@
                 class="form-control"
                 id="Email"
                 placeholder="Escriba su email"
-                minlength="3" maxlength="20"
+                minlength="3" maxlength="50"
                 required
               />
             </div>
@@ -393,12 +393,14 @@ mensaje -->
 <!-- <script>
         emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '#myForm')
     </script> -->
-<script type="text/javascript">
-  document.getElementById("formulario").addEventListener("submit", function (event) {
+<!-- <script type="text/javascript">
+  document.getElementById("myForm").addEventListener("submit", function (event) {
     event.preventDefault();
+    
     // generate a five digit number for the contact_number variable
     const serviceID = "service_a2nkqyl";
-    const templateID = "template_avml9sa";
+    const templateID = "template_nqdgcn4";
+    
 
     // send the email here
     emailjs.sendForm(serviceID, templateID, this).then((response) => {
@@ -409,12 +411,42 @@ mensaje -->
         console.log('FAILED...', error);
         alert("Oops, hubo un problema con el envío del formulario, verifique los datos ingresados");
       }
+      
     );
-
+   
+    form.reset();
   });
+  
+  
+</script> -->
+<script type="text/javascript">
+  const form = document.getElementById("myForm");
+  window.onload = function () {
+    document
+      .getElementById("myForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const serviceID = "service_a2nkqyl";
+        const templateID = "template_nqdgcn4";
+
+        // these IDs from the previous steps
+        emailjs.sendForm(serviceID, templateID, this).then(
+          function () {
+            console.log("SUCCESS!");
+            swal("El formulario se ha enviado correctamente");
+          },
+          function (error) {
+            console.log("FAILED...", error);
+            swal("Oops, hubo un problema con el envío del formulario, verifique los datos ingresados");
+          }
+        );
+        form.reset();
+      });
+  };
 </script>
 
-<script src="codigo.js"></script>
+<!-- <script src="codigo.js"></script> -->
 
     
   </body>
