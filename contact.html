@@ -244,7 +244,7 @@
                 class="form-control"
                 id="Email"
                 placeholder="Escriba su email"
-                minlength="3" maxlength="10"
+                minlength="3" maxlength="20"
                 required
               />
             </div>
@@ -258,7 +258,7 @@
                 class="form-control"
                 id="subject"
                 placeholder="Escriba el asunto de su mensaje"
-                minlength="3" maxlength="10"
+                minlength="3" maxlength="30"
                 required
               />
             </div>
@@ -272,7 +272,7 @@ mensaje -->
                 id="message"
                 row="5"
                 placeholder="Por favor ingrese su mensaje"
-                minlength="3" maxlength="10"
+                minlength="3" maxlength="120"
                 required
               ></textarea>
             </div>
@@ -403,11 +403,11 @@ mensaje -->
     // send the email here
     emailjs.sendForm(serviceID, templateID, this).then((response) => {
       console.log('SUCCESS', response.status, response.text);
-      swal("Bien hecho!", "Se ha registrado exitosamente", "success");
+      alert("El formulario se ha enviado correctamente");
     },
       (error) => {
         console.log('FAILED...', error);
-        swal("Oops", "Hubo un problema con el registro, verifique los datos ingresados", "error");
+        alert("Oops, hubo un problema con el envío del formulario, verifique los datos ingresados");
       }
     );
 
