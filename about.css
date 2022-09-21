@@ -6,6 +6,13 @@ body{
 
 }
 
+.abajo {
+
+    background-color: #000336 !important;
+    transition: 1.5s !important;
+
+}
+
 .imagenTv{
     position: relative;
 }
@@ -71,12 +78,7 @@ nav{
 
 
 
-.abajo {
 
-    background-color: #000336;
-    transition: 1.5s;
-
-}
 
 
 
@@ -105,30 +107,6 @@ nav{
 .btn-nav {
     width: 100px;
     height: 40px;
-}
-
-.btn-buscar {
-    border-color: #09BC8A !important;
-    color: #fff !important;
-    box-shadow: 0 0 40px 40px #09BC8A inset, 0 0 0 0 #09BC8A !important;
-    -webkit-transition: all 150ms ease-in-out !important;
-    transition: all 150ms ease-in-out !important;
-    text-decoration: none;
-}
-
-.btn-buscar:hover {
-    box-shadow: 0 0 10px 0 #09BC8A inset, 0 0 10px 4px #09BC8A !important;
-    color: #09BC8A !important;
-}
-
-
-
-.form-control {
-    border-color: none;
-}
-
-.form-control:hover {
-    box-shadow: 0 0 10px 0 #09BC8A inset, 0 0 10px 4px #09BC8A !important;
 }
 
 
@@ -183,6 +161,9 @@ nav{
     color: #09BC8A;
 }
 
+.fondo-nav-about{
+    background-color: #2a2c56;
+}
 
 
 

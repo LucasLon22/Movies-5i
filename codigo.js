@@ -64,7 +64,7 @@ const login = () => {
     if (index != -1) {
         window.location.assign("./admin.html")
     } else {
-        swal("Oops", "No existe una cuenta con ese correo", "error");
+        swal("Oops", "El Usuario o Contraseña no es correcto", "error");
     }
 }
 
