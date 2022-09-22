@@ -38,7 +38,7 @@ formularioUi.addEventListener("submit", (e) => {
 
     let nombrePersonal = document.getElementById("nombrePersonal").value;
     let apellido = document.getElementById("apellido").value;
-    let nombre = document.getElementById("nombre").value;
+    let nombre = document.getElementById("nombre").value.toLowerCase();
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
 
@@ -56,7 +56,7 @@ const login = () => {
     let users = JSON.parse(localStorage.getItem("usuarios"))
     console.log(users.nombre)
 
-    let username = document.getElementById("username").value;
+    let username = document.getElementById("username").value.toLowerCase();
     let contrasenia = document.getElementById("contrasenia").value;
 
 
