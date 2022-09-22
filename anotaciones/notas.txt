@@ -1,0 +1,32 @@
+Anotaciones pagina de peliculas:
+
+Navbar: propongo hacer el navbar, con boton de login y modal.
+
+Funciones editar peliculas, debe funcionar ese boton?
+
+
+Propuesta de trabajo:
+
+Lucas - Navbar
+Adolfo - Body - imagenes de peliculas
+Delfina - footer
+
+
+navbar Requerimientos:
+Minimos:
+- debe estar fijo
+- debe tener los botones: inicio, login y registro, acerca de nosotros y contacto optativo
+- No entiendo: ---> El navbar debe ser igual al de la página principal, (cuando este en esta página debe
+aparecer un item en el menú “administración” que corresponde a la página actual,
+este debe estar oculto en la web de inicio, hasta que nos logueamos como
+administrador) <---
+-Botón para agregar nuevas películas/series, debe abrir una ventana modal con todos
+los campos necesarios para agregar una nueva película/serie.
+
+
+
+
+
+
+
+
