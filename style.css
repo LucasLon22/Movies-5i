@@ -38,6 +38,7 @@ header {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+
 }
 
 .navbar-toggler {
@@ -353,6 +354,9 @@ hr {
     .text-centerPublicado {
         text-align: left;
     }
+
+    
+
 }
 
 /*  FIN AGREGADO ACORREA  */

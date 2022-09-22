@@ -18,3 +18,12 @@ body {
     border-radius: 10px;
     border-color: #292929 !important;
 }
+
+
+@media (max-width: 600px) {
+    .formulario-recupero{
+        width: 90%;
+        
+    }
+    
+}
