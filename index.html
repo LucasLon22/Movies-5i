@@ -206,7 +206,7 @@
                 maxlength="15" required />
             </div>
             <div class="mb-1 row mt-4 text-center">
-              <a class="link-recup-contraseña fs-5" href="./recupero.html">¿Olvidaste tu contraseña?</a>
+              <a class="link-recup-contraseña fs-5" href="./recupero.html" >¿Olvidaste tu contraseña?</a>
             </div>
           </div>
 
@@ -815,12 +815,16 @@
       // generate a five digit number for the contact_number variable
       const serviceID = "service_a2nkqyl";
       const templateID = "template_avml9sa";
+      const redireccionar = () =>{
+        window.location.href="./index.html";
+      } 
       
 
       // send the email here
       emailjs.sendForm(serviceID, templateID, this).then((response) => {
         console.log('SUCCESS', response.status, response.text);
         swal("Bien hecho!", "Se ha registrado exitosamente", "success");
+        setTimeout(redireccionar,3000)
         },
         (error) => {
           console.log('FAILED...', error);
