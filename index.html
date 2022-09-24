@@ -170,7 +170,7 @@
 
             </div>
             <button type="submit"
-              class="btn-buscar text-color-nav rounded-2 border-2 borde-color ps-3 pe-3">Registrame</button>
+              class="btn-buscar text-color-nav rounded-2 border-2 borde-color ps-3 pe-3" >Registrame</button>
           </form>
 
         </div>
@@ -811,19 +811,21 @@
     </script> -->
   <script type="text/javascript">
     document.getElementById("formulario").addEventListener("submit", function (event) {
-      event.preventDefault();
+      // event.preventDefault();
       // generate a five digit number for the contact_number variable
       const serviceID = "service_a2nkqyl";
       const templateID = "template_avml9sa";
+      
 
       // send the email here
       emailjs.sendForm(serviceID, templateID, this).then((response) => {
         console.log('SUCCESS', response.status, response.text);
         swal("Bien hecho!", "Se ha registrado exitosamente", "success");
-      },
+        },
         (error) => {
           console.log('FAILED...', error);
           swal("Oops", "Hubo un problema con el registro, verifique los datos ingresados", "error");
+          ;
         }
       );
 
